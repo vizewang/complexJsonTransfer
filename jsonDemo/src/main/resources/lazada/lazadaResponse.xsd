@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="SuccessResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Head"/>
+                <xs:element ref="Body"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Head">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="RequestId"/>
+                <xs:element ref="RequestAction"/>
+                <xs:element ref="ResponseType"/>
+                <xs:element ref="Timestamp"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RequestId" type="xs:string"/>
+    <xs:element name="RequestAction" type="xs:NCName"/>
+    <xs:element name="ResponseType" type="xs:NCName"/>
+    <xs:element name="Timestamp" type="xs:dateTime"/>
+    <xs:element name="Body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Products"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Products">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="Product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Product">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SellerSku"/>
+                <xs:element ref="ShopSku"/>
+                <xs:element ref="Name"/>
+                <xs:element ref="Variation"/>
+                <xs:element ref="ParentSku"/>
+                <xs:element ref="Quantity"/>
+                <xs:element ref="Available"/>
+                <xs:element ref="Price"/>
+                <xs:element ref="SalePrice"/>
+                <xs:element ref="SaleStartDate"/>
+                <xs:element ref="SaleEndDate"/>
+                <xs:element ref="Status"/>
+                <xs:element ref="ProductId"/>
+                <xs:element ref="Url"/>
+                <xs:element ref="MainImage"/>
+                <xs:element ref="Images"/>
+                <xs:element ref="Description"/>
+                <xs:element ref="TaxClass"/>
+                <xs:element ref="Brand"/>
+                <xs:element ref="PrimaryCategory"/>
+                <xs:element ref="ProductData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SellerSku" type="xs:NCName"/>
+    <xs:element name="ShopSku" type="xs:string"/>
+    <xs:element name="Name" type="xs:string"/>
+    <xs:element name="Variation" type="xs:anyURI"/>
+    <xs:element name="ParentSku" type="xs:NCName"/>
+    <xs:element name="Quantity" type="xs:integer"/>
+    <xs:element name="Available" type="xs:integer"/>
+    <xs:element name="Price" type="xs:decimal"/>
+    <xs:element name="SalePrice" type="xs:string"/>
+    <xs:element name="SaleStartDate" type="xs:string"/>
+    <xs:element name="SaleEndDate" type="xs:string"/>
+    <xs:element name="Status" type="xs:NCName"/>
+    <xs:element name="ProductId" type="xs:string"/>
+    <xs:element name="Url" type="xs:anyURI"/>
+    <xs:element name="MainImage" type="xs:anyURI"/>
+    <xs:element name="Images">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="Image"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Image" type="xs:anyURI"/>
+    <xs:element name="Description" type="xs:string"/>
+    <xs:element name="TaxClass" type="xs:NCName"/>
+    <xs:element name="Brand" type="xs:string"/>
+    <xs:element name="PrimaryCategory" type="xs:string"/>
+    <xs:element name="ProductData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="InputType"/>
+                    <xs:element ref="TypeTools"/>
+                </xs:choice>
+                <xs:element ref="NameMs"/>
+                <xs:element minOccurs="0" ref="Style"/>
+                <xs:element minOccurs="0" ref="Power"/>
+                <xs:element minOccurs="0" ref="TypeLighting"/>
+                <xs:element minOccurs="0" ref="Model"/>
+                <xs:element minOccurs="0" ref="ColorFamily"/>
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="PowerbankCapacity"/>
+                    <xs:element ref="TypeOfBattery"/>
+                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element ref="DescriptionMs"/>
+                    <xs:element ref="MaxDeliveryTime"/>
+                    <xs:element ref="MinDeliveryTime"/>
+                    <xs:element ref="PackageContent"/>
+                    <xs:element ref="PackageHeight"/>
+                    <xs:element ref="PackageLength"/>
+                    <xs:element ref="PackageWeight"/>
+                    <xs:element ref="PackageWidth"/>
+                    <xs:element ref="ProductMeasures"/>
+                    <xs:element ref="ProductWeight"/>
+                    <xs:element ref="ShortDescription"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="WarrantyType"/>
+                <xs:element ref="Warranty"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="InputType" type="xs:NCName"/>
+    <xs:element name="TypeTools" type="xs:NCName"/>
+    <xs:element name="NameMs" type="xs:string"/>
+    <xs:element name="Style" type="xs:NCName"/>
+    <xs:element name="Power" type="xs:integer"/>
+    <xs:element name="TypeLighting" type="xs:NCName"/>
+    <xs:element name="Model" type="xs:string"/>
+    <xs:element name="ColorFamily" type="xs:string"/>
+    <xs:element name="PowerbankCapacity" type="xs:NCName"/>
+    <xs:element name="TypeOfBattery" type="xs:string"/>
+    <xs:element name="DescriptionMs" type="xs:string"/>
+    <xs:element name="MaxDeliveryTime" type="xs:integer"/>
+    <xs:element name="MinDeliveryTime" type="xs:integer"/>
+    <xs:element name="PackageContent" type="xs:string"/>
+    <xs:element name="PackageHeight" type="xs:decimal"/>
+    <xs:element name="PackageLength" type="xs:decimal"/>
+    <xs:element name="PackageWeight" type="xs:decimal"/>
+    <xs:element name="PackageWidth" type="xs:decimal"/>
+    <xs:element name="ProductMeasures" type="xs:string"/>
+    <xs:element name="ProductWeight" type="xs:decimal"/>
+    <xs:element name="ShortDescription" type="xs:string"/>
+    <xs:element name="WarrantyType" type="xs:NMTOKEN"/>
+    <xs:element name="Warranty" type="xs:string"/>
+</xs:schema>
